@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Bulkan",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Open google search results bulkly",
+    "description": "The description of the application"
+  }
+}
