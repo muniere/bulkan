@@ -1,4 +1,4 @@
-# Pockeedly
+# Bulkan
 
 Chrome extension which enables to open google search result in bulk.
 
