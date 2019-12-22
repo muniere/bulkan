@@ -11,10 +11,9 @@ $ cd bulkan
 
 # install
 $ npm install
-$ bower install
 
 # build
-$ gulp build
+$ npm run build
 
 # Load dist directory as an unpacked extension.
 ```

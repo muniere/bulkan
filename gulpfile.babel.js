@@ -13,15 +13,11 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('dist'));
 });
 
-function lint(files) {
-  return () => {
-    return gulp.src(files)
-      .pipe($.eslint())
-      .pipe($.eslint.format());
-  };
-}
-
-gulp.task('lint', lint('app/scripts.babel/**/*.js'));
+gulp.task('lint', () => {
+  return gulp.src('app/scripts.babel/**/*.js')
+    .pipe($.eslint())
+    .pipe($.eslint.format());
+});
 
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
@@ -46,9 +42,7 @@ gulp.task('manifest', () => {
       buildnumber: false,
       background: {
         target: 'scripts/background.js',
-        exclude: [
-          'scripts/chromereload.js'
-        ]
+        exclude: ['scripts/chromereload.js']
       }
     }))
     .pipe($.if('*.css', $.cleanCss({ compatibility: '*' })))
@@ -67,9 +61,7 @@ gulp.task('babel', () => {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('copy', () => {
-  return gulp.src([
-    'app/bower_components/keymaster/keymaster.js'
-  ])
+  return gulp.src(['node_modules/keymaster/keymaster.js'])
     .pipe(gulp.dest('app/scripts'));
 });
 
