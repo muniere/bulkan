@@ -20,7 +20,7 @@
       callback({
         success: true,
         data: {
-          hrfes: bulkan.scrape(document)
+          hrefs: bulkan.scrape(document)
         }
       });
     default:
