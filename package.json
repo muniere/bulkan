@@ -29,11 +29,7 @@
     "gulp-sourcemaps": "2.x.x",
     "gulp-uglify": "3.x.x",
     "gulp-zip": "5.x.x",
-    "keymaster": "1.x.x",
     "main-bower-files": "2.x.x",
     "wiredep": "4.x.x"
-  },
-  "dependencies": {
-    "babel-upgrade": "^1.0.1"
   }
 }

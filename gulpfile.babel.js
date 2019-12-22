@@ -60,12 +60,7 @@ gulp.task('babel', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('copy', () => {
-  return gulp.src(['node_modules/keymaster/keymaster.js'])
-    .pipe(gulp.dest('app/scripts'));
-});
-
-gulp.task('watch', gulp.series(gulp.parallel('lint', 'babel', 'copy'), () => {
+gulp.task('watch', gulp.series(gulp.parallel('lint', 'babel'), () => {
   $.livereload.listen();
 
   gulp.watch([
@@ -76,7 +71,6 @@ gulp.task('watch', gulp.series(gulp.parallel('lint', 'babel', 'copy'), () => {
   ]).on('change', $.livereload.reload);
 
   gulp.watch('app/scripts.babel/**/*.js', ['lint', 'babel']);
-  gulp.watch('bower.json', ['copy']);
 }));
 
 gulp.task('size', () => {
@@ -93,7 +87,6 @@ gulp.task('package', () => {
 gulp.task('build', gulp.series(
   'lint',
   'babel',
-  'copy',
   'manifest',
   gulp.parallel('images', 'extras'),
   'size'

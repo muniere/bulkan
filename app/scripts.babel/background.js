@@ -1,6 +1,6 @@
-'use strict';
-
 (() => {
+  'use strict';
+
   //
   // Installation
   //
@@ -32,25 +32,6 @@
           chrome.tabs.create({ url: url, active: false });
         });
       });
-    }
-  });
-
-  //
-  // Events
-  //
-  chrome.runtime.onMessage.addListener((request, sender, reply) => {
-    switch (request.action) {
-    case 'open':
-      if (!Array.isArray(request.data.hrefs)) {
-        return console.info('request.data.hrefs is not an array', request);
-      }
-
-      request.data.hrefs.forEach((url) => {
-        chrome.tabs.create({ url: url, active: false });
-      });
-
-    default:
-      break;
     }
   });
 })();

@@ -1,4 +1,6 @@
 (() => {
+  'use strict';
+
   //
   // Helper
   //
@@ -25,20 +27,4 @@
       callback(null);
     }
   });
-  
-  //
-  // Keybind
-  //
-  (() => {
-    key('shift+o', (ev) => {
-      chrome.runtime.sendMessage({
-        action: 'open',
-        data: {
-          hrefs: bulkan.scrape(document) 
-        }
-      }, (res) => {
-        // do nothing
-      });
-    });
-  })();
 })();
