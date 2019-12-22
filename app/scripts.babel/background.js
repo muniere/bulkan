@@ -19,7 +19,7 @@
       'https://www.google.co.jp/*',
       'https://www.google.com/*',
     ],
-    onclick: (info, tab) => {
+    onclick: (_info, tab) => {
       chrome.tabs.sendMessage(tab.id, { action: 'scrape' }, (result) => {
         if (!result.success) {
           return console.info('failed to perform scrape', result);
