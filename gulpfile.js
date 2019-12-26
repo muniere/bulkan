@@ -6,14 +6,14 @@ const $ = require('gulp-load-plugins')();
 // Compile
 //
 function lint() {
-  return gulp.src('src/scripts/**/*.js')
+  return gulp.src('src/scripts/**/*.ts')
     .pipe($.eslint())
     .pipe($.eslint.format());
 }
 
 function compileScripts() {
-  return gulp.src('src/scripts/**/*.js')
-    .pipe($.babel())
+  return gulp.src('src/scripts/**/*.ts')
+    .pipe($.typescript())
     .pipe(gulp.dest('app/scripts'));
 }
 
@@ -41,7 +41,7 @@ function buildScripts(done) {
 
 function buildImages() {
   return gulp.src('app/images/**')
-    .pipe($.if($.if.isFile, 
+    .pipe($.if($.if.isFile,
       $.cache($.imagemin({
         progressive: true,
         interlaced: true,
@@ -130,7 +130,7 @@ exports.compile = gulp.series(
     compileScripts,
     compileImages,
     compileLocales,
-    compileManifest,
+    compileManifest
   )
 );
 exports.build = gulp.series(

@@ -14,6 +14,31 @@
     "quotes": [
       2,
       "single"
-      ]
-  }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended"
+      ],
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+        "eol-last": 0,
+        "semi": [
+          2,
+          "never"
+        ]
+      }
+    }
+  ]
 }
