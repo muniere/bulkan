@@ -5,9 +5,11 @@
     "node": ">=0.8.0"
   },
   "scripts": {
+    "compile": "gulp compile",
     "build": "gulp build",
-    "package": "gulp package",
-    "clean": "rm -rf dist/ package/"
+    "watch": "gulp watch",
+    "archive": "gulp archive",
+    "clean": "gulp clean"
   },
   "devDependencies": {
     "@babel/core": "7.x.x",

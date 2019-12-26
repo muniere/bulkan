@@ -7,7 +7,7 @@ dist
 app/bower_components
 test/bower_components
 package
-app/scripts
+app
 .DS_Store
 
 ### https://raw.github.com/github/gitignore/e6dd3a81e6037cc923e503e372c80326f65ccb25/Global/macOS.gitignore
